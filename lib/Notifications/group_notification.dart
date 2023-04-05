@@ -8,7 +8,7 @@ class GroupNotification {
 
   Future showNotification({int id = 2, List<String>? title, List<String>? body, List<String>? payload}) async {
     for (var i = 0; i < title!.length; i++) {
-      _notification.show(id + i, title[i], body![i], await firstNotificationDetails());
+      notification.show(id + i, title[i], body![i], await firstNotificationDetails());
     }
   }
 

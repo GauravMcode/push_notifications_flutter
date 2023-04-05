@@ -31,8 +31,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.2
   flutter_local_notifications: ^13.0.0
-  flutter_native_timezone: ^2.0.0
   timezone: ^0.9.1
 
 dev_dependencies:

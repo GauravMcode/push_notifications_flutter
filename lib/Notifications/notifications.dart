@@ -5,18 +5,20 @@ part 'big_notification.dart';
 part 'group_notification.dart';
 part 'schedule_notification.dart';
 
-final _notification = FlutterLocalNotificationsPlugin();
+final notification = FlutterLocalNotificationsPlugin();
 Future initialize() async {
   const AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('flutter_logo');
   //'flutter_logo' ->inside the android>app>src>main>res>drawable folder.
 
   const InitializationSettings initializationSettings = InitializationSettings(android: initializationSettingsAndroid);
-  await _notification.initialize(initializationSettings, onDidReceiveNotificationResponse: (details) {});
+  await notification.initialize(initializationSettings, onDidReceiveNotificationResponse: (details) async {
+    final String? payload = details.payload;
+  });
 }
 
 class SimpleNotificataion {
   Future showNotification({int id = 0, String? title, String? body, String? payload}) async {
-    return _notification.show(
+    return notification.show(
       id, //identify notification uniquely
       title,
       body,

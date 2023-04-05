@@ -27,24 +27,24 @@ class NotificationButton extends StatelessWidget {
       onPressed: () {
         switch (type) {
           case NotificationType.simple:
-            SimpleNotificataion().showNotification(title: 'Hello Gaurav!', body: 'How have you been doing Today?', payload: 'gaurav.msg');
+            SimpleNotificataion().showNotification(title: 'Hello Gaurav!', body: 'How have you been doing Today?', payload: 'simple.msg&${DateTime.now().millisecondsSinceEpoch}');
             break;
           case NotificationType.big:
-            BigNotification('Hello Message').showNotification(title: 'Hello Gaurav!', body: 'How have you been doing Today?', payload: 'gaurav.msg');
+            BigNotification('Hello Message').showNotification(title: 'Hello Gaurav!', body: 'How have you been doing Today?', payload: 'big.msg&${DateTime.now().millisecondsSinceEpoch}');
             break;
           case NotificationType.group:
             final titles = ['first message', 'second message'];
             final bodies = ['This is the first message', 'This is the second message'];
-            GroupNotification().showNotification(title: titles, body: bodies, payload: ['first.msg', 'second.msg']);
+            GroupNotification().showNotification(title: titles, body: bodies, payload: ['first.msg', 'group.msg']);
             break;
           case NotificationType.schedule:
-            SchedulePeriodicNotification().showNotification(title: 'Hello Gaurav!', body: 'This is a Scheduled Notification', payload: 'gaurav.msg');
+            SchedulePeriodicNotification().showNotification(title: 'Hello Gaurav!', body: 'This is a Scheduled Notification', payload: 'schedule.msg&${DateTime.now().millisecondsSinceEpoch}');
             break;
           case NotificationType.cancel:
             SchedulePeriodicNotification().stopNotifications();
             break;
           case NotificationType.zoned:
-            ScheduleZonedNotification().showNotification(title: 'Hello Nikunj!', body: 'This is a zoned Scheduled Notification', payload: 'gaurav.msg');
+            ScheduleZonedNotification().showNotification(title: 'Hello Nikunj!', body: 'This is a zoned Scheduled Notification', payload: 'zoned.msg&${DateTime.now().millisecondsSinceEpoch}');
             break;
         }
       },

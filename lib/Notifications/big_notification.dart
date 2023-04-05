@@ -13,7 +13,7 @@ class BigNotification {
   }
 
   Future showNotification({int id = 1, String? title, String? body, String? payload}) async {
-    return _notification.show(
+    return notification.show(
       id, //identify notification uniquely
       title,
       body,

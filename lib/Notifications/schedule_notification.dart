@@ -2,7 +2,7 @@ part of 'notifications.dart';
 
 class SchedulePeriodicNotification {
   Future showNotification({int id = 100, String? title, String? body, String? payload}) async {
-    return _notification.periodicallyShow(
+    return notification.periodicallyShow(
       id, //identify notification uniquely
       title,
       body,
@@ -29,7 +29,7 @@ class SchedulePeriodicNotification {
   }
 
   stopNotifications() {
-    _notification.cancel(100);
+    notification.cancel(100);
   }
 }
 
@@ -39,7 +39,7 @@ class ScheduleZonedNotification {
     var timeNow = DateTime.now();
     var dateTime = DateTime(timeNow.year, timeNow.month, timeNow.day, timeNow.hour, 21, 0);
 
-    return _notification.zonedSchedule(
+    return notification.zonedSchedule(
       id, //identify notification uniquely
       title,
       body,
